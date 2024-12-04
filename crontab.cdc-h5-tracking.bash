@@ -12,10 +12,10 @@ date
 git pull
 
 ## download the data from CDC's JSON endpoints and write into a CSV file
-## titled cdc-h5n1-$(DATES).csv where $(DATES) is the "map time period"
+## titled cdc-h5-$(DATES).csv where $(DATES) is the "map time period"
 ## denoting the week covered by the data
-Rscript dl-cdc-h5n1.r
+Rscript dl-cdc-h5.r
 
 ## commit it to git
-git add cdc-h5n1-*.csv && git commit -a -m 'automated commit of latest data' && git push
+git add cdc-h5-data/cdc-h5-*.csv && git commit -a -m 'automated commit of latest data' && git push
 
