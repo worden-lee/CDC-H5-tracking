@@ -14,7 +14,11 @@ time.period = meta.df$`Time-Period-Map`[[1]]
 map.json = readLines(url('https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/FluA/H5N1Map.json'))
 map.df = (fromJSON(map.json)
   %>% mutate(time.period = time.period)
-  %T>% write.csv(file.path('cdc-h5-data',paste0('cdc-h5-',time.period,'.csv')))
+  %T>% {
+    csvpath = file.path('cdc-h5-data',paste0('cdc-h5-',time.period,'.csv'))
+    cat('> ',csvpath,'\n')
+    write.csv(.,csvpath)
+  }
 )
 
 if(0) {
