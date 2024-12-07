@@ -1,4 +1,5 @@
 ## download the latest H5 detected/not detected dataset from CDC
+## https://www.cdc.gov/nwss/rv/wwd-h5.html
 library(jsonlite)
 library(tidyverse)
 library(purrr)
